@@ -5,7 +5,36 @@ import './App.css'
 
 function MyButton() {
   return (
-    <button>I'm a button</button>
+    <button>I'm the 1st button</button>
+  );
+}
+
+function MyButton2() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <div>
+      <h3>I'm the 2nd button with alert</h3>
+      <button onClick={handleClick}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+function MyButton3() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+      <button onClick={handleClick}>
+        Clicked {count} times
+      </button>
   );
 }
 
@@ -98,20 +127,28 @@ export default function MyApp() {
     </li>
   );
 
-    return (
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton />
+      <AboutPage />
+      <Profile /><br /><div>{content}</div>
       <div>
-        <h1>Welcome to my app</h1>
-        <MyButton />
-        <AboutPage />
-        <Profile /><br /><div>{content}</div>
-        <div>
-          {isLoggedIn ? <LoginForm /> : <AdminPanel />}
-        </div>
-        <div>
-          {isLoggedIn && <AdminPanel />}
-        </div>
-        <ul>{listItems}</ul>
-        <ShoppingList />
+        {isLoggedIn ? <LoginForm /> : <AdminPanel />}
       </div>
-    );
-  }
+      <div>
+        {isLoggedIn && <AdminPanel />}
+      </div>
+      <ul>{listItems}</ul>
+      <ShoppingList />
+      <MyButton2 /><br />
+      <h3>I'm the 3rd button with counter</h3>
+      <MyButton3 />
+      <div>
+      <h3>Counters that update separately (same as 3rd button)</h3>
+      <MyButton3 />
+      <MyButton3 />
+    </div>  
+    </div>
+  );
+}
