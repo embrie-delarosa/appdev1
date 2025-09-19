@@ -14,7 +14,7 @@ function AboutPage() {
     <>
       <h1>About</h1>
       <p>Hello there.<br />How do you do?</p>
-      <img className="avatar" src={reactLogo} style={{ borderRadius: '50%' }} />
+      <img className="avatar" src={reactLogo} />
     </>
   )
 
@@ -35,7 +35,8 @@ function Profile() {
         alt={'Photo of ' + user.name}
         style={{
           width: user.imageSize,
-          height: user.imageSize
+          height: user.imageSize,
+          borderRadius: '50%'
         }}
       />
     </>
@@ -50,6 +51,29 @@ function LoginForm() {
   return "This is the login form";
 }
 
+const products2 = [
+  { title: 'Cabbage2', isFruit: false, id: 1 },
+  { title: 'Garlic2', isFruit: false, id: 2 },
+  { title: 'Apple2', isFruit: true, id: 3 },
+];
+
+function ShoppingList() {
+  const listItems2 = products2.map(product =>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? 'magenta' : 'darkgreen'
+      }}
+    >
+      {product.title}
+
+    </li>
+  );
+
+  return (
+    <ul>{listItems2}</ul>
+  );
+}
 
 export default function MyApp() {
 
@@ -62,18 +86,32 @@ export default function MyApp() {
     content = <LoginForm />;
   }
 
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-      <AboutPage />
-      <Profile /><br /><div>{content}</div>
-      <div>
-        {isLoggedIn ? <LoginForm /> : <AdminPanel />}
-      </div>
-      <div>
-        {isLoggedIn && <AdminPanel />}
-      </div>
-    </div>
+  const products = [
+    { title: 'Cabbage', id: 1 },
+    { title: 'Garlic', id: 2 },
+    { title: 'Apple', id: 3 },
+  ];
+
+  const listItems = products.map(product =>
+    <li key={product.id}>
+      {product.title}
+    </li>
   );
-}
+
+    return (
+      <div>
+        <h1>Welcome to my app</h1>
+        <MyButton />
+        <AboutPage />
+        <Profile /><br /><div>{content}</div>
+        <div>
+          {isLoggedIn ? <LoginForm /> : <AdminPanel />}
+        </div>
+        <div>
+          {isLoggedIn && <AdminPanel />}
+        </div>
+        <ul>{listItems}</ul>
+        <ShoppingList />
+      </div>
+    );
+  }
