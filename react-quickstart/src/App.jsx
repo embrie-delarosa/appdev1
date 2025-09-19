@@ -32,11 +32,20 @@ function MyButton3() {
   }
 
   return (
-      <button onClick={handleClick}>
-        Clicked {count} times
-      </button>
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
   );
 }
+
+function MyButton4({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
 
 function AboutPage() {
   return (
@@ -127,28 +136,46 @@ export default function MyApp() {
     </li>
   );
 
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
   return (
-    <div>
+    <>
       <h1>Welcome to my app</h1>
       <MyButton />
       <AboutPage />
-      <Profile /><br /><div>{content}</div>
-      <div>
+      <Profile /><br />
+
+      <>{content}</>
+
+      <>
         {isLoggedIn ? <LoginForm /> : <AdminPanel />}
-      </div>
-      <div>
+      </>
+
+      <>
         {isLoggedIn && <AdminPanel />}
-      </div>
+      </>
+
       <ul>{listItems}</ul>
       <ShoppingList />
       <MyButton2 /><br />
       <h3>I'm the 3rd button with counter</h3>
       <MyButton3 />
-      <div>
-      <h3>Counters that update separately (same as 3rd button)</h3>
-      <MyButton3 />
-      <MyButton3 />
-    </div>  
-    </div>
+
+      <>
+        <h3>Counters that update separately (same as 3rd button)</h3>
+        <MyButton3 />
+        <MyButton3 />
+      </>
+
+      <>
+        <h3>Counters that update together</h3>
+        <MyButton4 count={count} onClick={handleClick} />
+        <MyButton4 count={count} onClick={handleClick} />
+      </>
+    </>
   );
 }
