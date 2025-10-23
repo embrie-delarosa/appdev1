@@ -18,6 +18,26 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 180px;
+  font-family: Arial, sans-serif;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
