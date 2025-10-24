@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 .logo {
@@ -26,12 +27,11 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 180px;
-  font-family: Arial, sans-serif;
 }
 
 .avatar {
   border-radius: 50%;
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -39,8 +39,8 @@
 }
 
 article {
-  font-family: Arial, sans-serif;
   margin: 20px;
+  text-align: left;
 }
 
 article h1 {
@@ -50,14 +50,16 @@ article h1 {
 
 ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin: 0;
 }
 
 li {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 25px;
 }
 
 li img {
@@ -79,6 +81,29 @@ li b {
   font-size: 1em;
   margin-bottom: 4px;
 }
+.todo-list::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  color: black;
+}
+
+.zara-todo-list::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  color: pink;
+}
+
+.item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  color: black;
+}
 
 @keyframes logo-spin {
   from {
@@ -93,10 +118,6 @@ li b {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
 }
 
 .read-the-docs {

@@ -1,17 +1,17 @@
 export default function TodoList() {
   return (
     <>
-      <h1>Hedy Lamarr's Todos</h1>
+    <div style ={{ textAlign: "left"}}>
+      <h1 style={{ fontSize: "2em" }}>Hedy Lamarr's Todos</h1>
       <img
         src="https://i.imgur.com/yXOvdOSs.jpg"
         alt="Hedy Lamarr"
-        className="photo"
       />
       <ul>
-        <li>Invent new traffic lights</li>
-        <li>Rehearse a movie scene</li>
-        <li>Improve spectrum technology</li>
+        <li className="todo-list">Invent new traffic lights</li>
+        <li className="todo-list">Rehearse a movie scene</li>
+        <li className="todo-list">Improve spectrum technology</li>
       </ul>
-    </>
-  );
+    </div>
+    </>);
 }
