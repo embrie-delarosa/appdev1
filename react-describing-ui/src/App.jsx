@@ -7,6 +7,8 @@ import SaruhashiProfile from './Saruhashi.jsx';
 import PackingList from './PackingList.jsx';
 import DataList from './DataList.jsx';
 import TeaCup from './TeaCup.jsx';
+import RootComponent from './RootComponent.jsx';
+import RootModule from './RootModule.jsx';
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
       <PackingList />
       <DataList />
       <TeaCup />
+      <RootComponent />
+      <RootModule />
     </div>
   );
 }
