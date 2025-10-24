@@ -38,6 +38,48 @@
   margin-bottom: 10px;
 }
 
+article {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+article h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+li p {
+  margin: 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+li b {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

@@ -5,6 +5,7 @@ import ZaraToDo from './ZaraToDo.jsx';
 import Profile from './Profile.jsx';
 import SaruhashiProfile from './Saruhashi.jsx';
 import PackingList from './PackingList.jsx';
+import DataList from './DataList.jsx';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Profile />
       <SaruhashiProfile />
       <PackingList />
+      <DataList />
     </div>
   );
 }
