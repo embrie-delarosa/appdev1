@@ -1,4 +1,6 @@
-<h1>Hedy Lamarr's Todos</h1>
+export default function TodoList() {
+  return (
+    <h1>Hedy Lamarr's Todos</h1>
 <img 
   src="https://i.imgur.com/yXOvdOSs.jpg" 
   alt="Hedy Lamarr" 
@@ -9,4 +11,5 @@
     <li>Rehearse a movie scene
     <li>Improve the spectrum technology
 </ul>
-
+  )
+}
