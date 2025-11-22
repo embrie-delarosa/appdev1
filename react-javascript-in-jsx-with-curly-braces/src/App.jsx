@@ -10,12 +10,20 @@ export function Avatar() {
   );
 }
 
-export function TodoList1() {
+/*export function TodoList1() {
   const name = 'Gregorio Y. Zara';
   return (
     <h1>{name}'s To Do List</h1>
   );
-}
+}*/
+
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
 
 const today = new Date();
 
@@ -26,7 +34,7 @@ function formatDate(date) {
   ).format(date);
 }
 
-export default function TodoList() {
+/*export default function TodoList() {
   return (
     <>
       <Avatar />
@@ -44,5 +52,23 @@ export default function TodoList() {
       </ul>
     </>
   );
-}
+}*/
 
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <h1>To Do List for {formatDate(today)}</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
